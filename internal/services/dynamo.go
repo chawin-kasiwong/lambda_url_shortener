@@ -92,7 +92,7 @@ func GetLongURL(shortCode string) (string, error) {
 	}
 
 	// Check if result is empty
-	if result.Item == nil || len(result.Item) == 0 {
+	if len(result.Item) == 0 {
 		return "", fmt.Errorf("short URL not found")
 	}
 
