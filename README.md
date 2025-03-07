@@ -17,7 +17,21 @@ This project is a serverless URL shortener built using AWS services. It allows u
 - Lambda – Serverless compute function to handle URL processing.
 - API Gateway – Exposes the API for URL shortening and redirection.
 
-## How to use
+## API
+- API `POST` for create short URL. (If setup API key must add `x-api-key` in Headers)
+    - Body
+    ```JSON
+    {
+        "long_url": "https://google.com"
+    }
+    ```
+    -Response
+    ```JSON
+    {
+        "short_url": "https://api.domain.com/{short_code}"
+    }
+    ```
+- API `GET` to redirect short URL to long URL. `https://api.domain.com/{short_code}`
 
 ## Must have!
 - Registered domain.
